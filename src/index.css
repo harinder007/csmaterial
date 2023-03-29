@@ -15,3 +15,35 @@ body {
 li {
     list-style: none;
 }
+
+.options {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.heading {
+    display: inline;
+    margin-left: 20px;
+    font-size: 40px;
+}
+
+.options button {
+    padding: 10px;
+    font-size: large;
+}
+
+.back-btn {
+    font-size: 30px;
+    background-color: transparent;
+    color: rgb(226, 128, 43);
+    border: none;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+    justify-content: center;
+}
