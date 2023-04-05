@@ -3,7 +3,14 @@ import Header from './Home/Header'
 import Options from './Home/Options'
 import AdminEntry from './Admin/AdminEntry'
 import { useState } from 'react'
-import { useAsyncError } from 'react-router-dom'
+import { ButtonGroup, Button, Fab } from '@mui/material'
+
+
+const data = fetch("http://127.0.0.1:5000/api/papers").then(
+  (res)=> res.json()
+).then((res)=>
+  console.log(res)
+)
 
 
 function Home({isAdmin}) {
@@ -29,39 +36,44 @@ function Home({isAdmin}) {
     })
   };
 
-  
-
   console.log(page + stream + sem + material)
   const pageOne = (
     <>
       <div className='main-header'>
         <Header text="Select your class"/>
       </div>
+      <ButtonGroup variant="contained" size="large" aria-label="large button group">
         <Options values={['MCA','MSC','MSC DS']} incPage={incrementPage} setValue={setStream}/>
+      </ButtonGroup>
     </>
   )
 
   const pageTwo = (
     <>
       <div className='main-header'>
-      <button className='back-btn' onClick={decrementPage}>
+      <Fab color="secondary" aria-label="back" onClick={decrementPage}>
             <i className="ph-bold ph-arrow-left"></i>
-        </button>
-        <Header text="Select your sem"/>
+      </Fab>
+      <Header text="Select your sem"/>
       </div>
+      <ButtonGroup variant="contained" size="large" aria-label="large button group">
         <Options values={[1,2,3,4]} incPage={incrementPage} setValue={setSem}/>
+      </ButtonGroup>
     </>
   )
 
   const pageThree = (
     <>
       <div className='main-header'>
-      <button className='back-btn' onClick={decrementPage}>
+      <Fab color="secondary" aria-label="back" onClick={decrementPage}>
             <i className="ph-bold ph-arrow-left"></i>
-        </button>
+        </Fab>
         <Header text="Here you go"/>
       </div>
+      <ButtonGroup variant="contained" size="large" orientation="vertical"
+        aria-label="vertical outlined button group">
         <Options values={["Previous Year", "Assignment","Study Material","Syllabus"]} incPage={incrementPage} setValue={setMaterial}/>
+      </ButtonGroup>
     </>
   )
 
@@ -75,7 +87,7 @@ function Home({isAdmin}) {
        </div>
        <div className='paper'><h3>MCA_4_2022</h3>
        <a href=""><i class="ph-bold ph-download-simple"></i>
-</a>
+       </a>
        <i class="ph-bold ph-share-fat"></i>
        </div>
     </>
@@ -84,9 +96,9 @@ function Home({isAdmin}) {
   const adminEntry = (
     <>
     <div className='main-header'>
-      <button className='back-btn' onClick={decrementPage}>
+    <Fab color="primary" aria-label="back" onClick={decrementPage}>
             <i className="ph-bold ph-arrow-left"></i>
-        </button>
+      </Fab>
         <Header text={`Upload ${material}` }/>
       </div>
       <AdminEntry data={data}/>

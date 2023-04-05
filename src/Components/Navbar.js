@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
+import Button from '@mui/material/Button';
+
 
 function Navbar() {
     return (
       <div className="Navbar">
         <ul className="menu">
-            <li className="nav-item"><Link to="/">Home</Link></li>
-            <li className="nav-item"><Link to="/about">About</Link></li>
-            <li className="nav-item"><Link to="/contact">Contact</Link></li>
-            <li className="nav-item"><Link to="/admin">Admin</Link></li>
+            <Button><Link to="/">Home</Link></Button>
+            <Button><Link to="/about">About</Link></Button>
+            <Button><Link to="/contact">Contact</Link></Button>
+            <Button><Link to="/admin">Admin</Link></Button>
         </ul>
       </div>
     );

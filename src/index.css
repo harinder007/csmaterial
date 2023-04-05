@@ -1,7 +1,11 @@
 body {
     background-color: #1c1c1c;
     color: white;
-    font-family: Poppins;
+    font-family:'Poppins', sans-serif;
+}
+
+.nav-item {
+    color: #1c1c1c;
 }
 
 .menu {
@@ -17,36 +21,15 @@ a{
     color: white;
 }
 
-button {
-    cursor: pointer;
-}
-
-li {
-    list-style: none;
-}
-
-.options {
-    display: flex;
-    gap: 15px;
-    margin-top: 30px;
-}
-
 .heading {
     display: inline;
     font-size: 40px;
 }
 
-.options button {
-    padding: 10px;
-    font-size: large;
-}
-
-.back-btn {
-    font-size: 30px;
-    background-color: transparent;
-    color: rgb(226, 128, 43);
-    border: none;
-    margin-right: 20px;
+.main-header {
+    display: flex;
+    align-items: center;
+    gap:20px;
 }
 
 .main {
