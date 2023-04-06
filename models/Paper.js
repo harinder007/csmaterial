@@ -2,11 +2,11 @@ const mongoose = require('mongoose')
 
 const PaperSchema = mongoose.Schema({
     className:{
-        type: String,
+      type: String,
         required: true,
     },
     sem:{
-        type: Number,
+      type: Number,
         required: true,
     },
     year: {

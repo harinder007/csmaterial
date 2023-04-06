@@ -2,8 +2,8 @@ const express = require('express')
 const Paper = require('../../models/Paper')
 const router = express.Router();
 
-// @route   GET api/admin/verify
-// @desc    IP address verification of admin
+// @route   GET api/papers
+// @desc    IP address verification of papers
 // @access  Public
 router.get('/', async(req, res) => {
     console.log('hi')
@@ -11,6 +11,18 @@ router.get('/', async(req, res) => {
      res.send(papers);
 });
 
+// @route   GET api/papers
+// @desc    IP address verification of papers
+// @access  Public
+router.get('/deleteAll', async(req, res) => {
+    await Paper.deleteMany({});
+     res.send("success");
+});
+
+
+// @route   POST api/papers
+// @desc    IP address verification of papers
+// @access  Public
 router.post('/', async(req, res) => {
     let { className, sem, year, viewLink, downloadLink} =
         req.body;
@@ -26,6 +38,7 @@ router.post('/', async(req, res) => {
 
     paper = new Paper(paperFields);
     await paper.save();
+    res.send('success');
 });
 
 module.exports = router;

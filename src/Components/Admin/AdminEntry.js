@@ -6,6 +6,26 @@ function AdminEntry({data}) {
   const [viewLink, setViewLink] = useState("");
   const [downloadLink, setDownloadLink] = useState("");
 
+  let paperData = {
+    className: data.stream,
+    sem: data.sem,
+    year: year,
+    viewLink: viewLink,
+    downloadLink: downloadLink
+  };
+
+  const uploadData = async()=> {
+  const res = await fetch("http://localhost:5000/api/papers", {
+  method: "POST",
+  url: `http://localhost:5000`,
+  body: JSON.stringify(paperData),
+  headers: {
+    "Content-type": "application/json; charset=UTF-8"
+  }
+  });
+  console.log(res)
+  }
+
   return (
     <div className='upload-data'>
         <div className="year-input">
@@ -20,7 +40,7 @@ function AdminEntry({data}) {
         <label htmlFor="pdf1">Download Link</label>
         <input type="text" name='pdf1' onChange={(e) => setDownloadLink(e.target.value)}/>
         </div>
-        <button type='button'>Upload</button>
+        <button type='button' onClick={uploadData}>Upload</button>
     </div>
   )
 }
