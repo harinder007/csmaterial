@@ -6,13 +6,6 @@ import { useState } from 'react'
 import { ButtonGroup, Button, Fab } from '@mui/material'
 
 
-const data = fetch("http://127.0.0.1:5000/api/papers").then(
-  (res)=> res.json()
-).then((res)=>
-  console.log(res)
-)
-
-
 function Home({isAdmin}) {
 
   const [page, setPage] = useState(0);

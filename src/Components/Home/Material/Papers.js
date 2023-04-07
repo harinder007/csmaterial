@@ -1,19 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../Header'
+import Paper from './Paper'
+
+let papers = fetch("http://127.0.0.1:5000/api/papers").then(
+  (res)=> res.json()
+).then((res)=>
+  console.log(res)
+)
+
+console.log(papers)
 
 function Papers({data}) {
       return (
-    <div className='main'><Header text={`${(data.className).toUpperCase()} ${data.sem}th Sem Papers`}/>
-    <div className='paper'><h3>MCA_4_2021</h3>
-    <i class="ph-bold ph-eye"></i>
-    <i class="ph-bold ph-download-simple"></i>
-    <i class="ph-bold ph-share-fat"></i>
+    <div className='main'>
+      <Header text={`${(data.className).toUpperCase()} ${data.sem}th Sem Papers`}/>
+      <Paper data={data}/>
     </div>
-    <div className='paper'><h3>MCA_4_2022</h3>
-    <a href=""><i class="ph-bold ph-download-simple"></i>
-    </a>
-    <i class="ph-bold ph-share-fat"></i>
-    </div></div>
   )
 }
 
