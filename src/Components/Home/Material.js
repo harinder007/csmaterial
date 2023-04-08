@@ -12,7 +12,7 @@ function Material() {
 
   return (
     <div>
-      {url[0] == 'paper' ? (<><Papers data={data}/></>): (<h1>dfdf</h1>)}
+      {url[0] == 'PREVIOUS%20YEAR' ? (<><Papers data={data}/></>): (<h1>dfdf</h1>)}
     </div>
   )
 }

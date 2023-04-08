@@ -18,6 +18,7 @@ app.use(express.json());
 
 // Define Routes
 app.use('/api/papers', require('./routes/api/paper'));
+app.use('/api/auth', require('./routes/api/auth'));
 
 // Serve static assets in production
 

@@ -6,7 +6,7 @@ function Options({values, setValue, incPage}) {
   const buttons = [];
 
   values.forEach(element => {
-    buttons.push(<Button sx={{m:1}} onClick={(e) => {setValue(e.target.innerText); incPage()}}>{element}</Button>)
+    buttons.push(<Button  variant="contained" sx={{m:1}} onClick={(e) => {setValue(e.target.innerText); incPage()}}>{element}</Button>)
   });
 
 

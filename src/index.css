@@ -40,15 +40,10 @@ a{
     justify-content: center;
 }
 
-.paper {
-    color: #1c1c1c;
-    background-color: aliceblue;
+.share {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 0 30px;
-    font-size: large;
-    margin-bottom: 30px;
+    gap: 15px;
+    padding: 10px;
 }
 
 .admin-login {

@@ -5,22 +5,23 @@ import Admin from "./Components/Admin";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 import AdminDashboard from "./Components/Admin/AdminDashboard";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route,Navigate } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material";
 import Papers from "./Components/Home/Material"
+import { WindowSharp } from "@mui/icons-material";
 
 const THEME = createTheme({
   palette: {
     primary: {
-      light: '#f6685e',
-      main: '#f44336',
-      dark: '#aa2e25',
+      light: '#8eb4e5',
+      main: '#4483d5',
+      dark: '#2f5b95',
       contrastText: '#fff',
     },
     secondary: {
-      light: '#cfd8dc',
-      main: '#607d8b',
-      dark: '#37474f',
+      light: '#c2cfe4',
+      main: '#a8bbd9',
+      dark: '#647082',
       contrastText: '#fff',
     },
   },
@@ -34,6 +35,7 @@ const THEME = createTheme({
 });
 
 function App() {
+
   return (
       <ThemeProvider theme={THEME}>
       <BrowserRouter>

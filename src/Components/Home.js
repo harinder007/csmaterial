@@ -4,6 +4,7 @@ import Options from './Home/Options'
 import AdminEntry from './Admin/AdminEntry'
 import { useState } from 'react'
 import { ButtonGroup, Button, Fab } from '@mui/material'
+import { Navigate } from 'react-router-dom'
 
 
 function Home({isAdmin}) {
@@ -35,9 +36,9 @@ function Home({isAdmin}) {
       <div className='main-header'>
         <Header text="Select your class"/>
       </div>
-      <ButtonGroup variant="contained" size="large" aria-label="large button group">
+      <div className="home-btns">
         <Options values={['MCA','MSC','MSC DS']} incPage={incrementPage} setValue={setStream}/>
-      </ButtonGroup>
+      </div>
     </>
   )
 
@@ -49,9 +50,9 @@ function Home({isAdmin}) {
       </Fab>
       <Header text="Select your sem"/>
       </div>
-      <ButtonGroup variant="contained" size="large" aria-label="large button group">
+      <div className="home-btns">
         <Options values={[1,2,3,4]} incPage={incrementPage} setValue={setSem}/>
-      </ButtonGroup>
+      </div>
     </>
   )
 
@@ -72,17 +73,7 @@ function Home({isAdmin}) {
 
   const pageFour = (
     <>
-       <Header text="MCA 4th Sem Papers"/>
-       <div className='paper'><h3>MCA_4_2021</h3>
-       <i class="ph-bold ph-eye"></i>
-       <i class="ph-bold ph-download-simple"></i>
-       <i class="ph-bold ph-share-fat"></i>
-       </div>
-       <div className='paper'><h3>MCA_4_2022</h3>
-       <a href=""><i class="ph-bold ph-download-simple"></i>
-       </a>
-       <i class="ph-bold ph-share-fat"></i>
-       </div>
+       <Navigate to={`/${material}-${stream}-${sem}`}/>
     </>
   )
 

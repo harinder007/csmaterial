@@ -14,13 +14,22 @@ function Admin() {
         return <Navigate to="/adminDashboard"/>;
     }
 
-    const login = () => {
-        if(userName === 'admin' && password === 'admin'){
-            setGoToDashboard(true); 
+    const login = async() => {
+        await fetch("http://localhost:5000/api/auth", {
+        method: "POST",
+        url: `http://localhost:5000`,
+        body: JSON.stringify({username: userName, password:password}),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
         }
-        else {
-            console.log('wrong password')
-        }
+        }).then((res)=>{
+            return res.json()
+        }).then((data)=>{
+            if(data.token){
+                window.localStorage.setItem("token",data.token)
+                setGoToDashboard(true);
+            }
+        })
     }
 
   return (

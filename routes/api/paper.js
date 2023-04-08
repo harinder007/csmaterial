@@ -25,20 +25,25 @@ router.get('/deleteAll', async(req, res) => {
 // @access  Public
 router.post('/', async(req, res) => {
     let { className, sem, year, viewLink, downloadLink} =
-        req.body;
+    req.body;
     console.log("sem", sem)
     let paper;
-    const paperFields = {
-        className: className,
-            sem: sem,
-            year: year,
-            viewLink: viewLink,
-            downloadLink: downloadLink
-        };
-
-    paper = new Paper(paperFields);
-    await paper.save();
-    res.send('success');
+    try {
+        const paperFields = {
+            className: className,
+                sem: sem,
+                year: year,
+                viewLink: viewLink,
+                downloadLink: downloadLink
+            };
+    
+        paper = new Paper(paperFields);
+        await paper.save();
+        res.send({msg: 'success'});
+    } catch (error) {
+        res.send({"err":error.toString()})
+        console.log(error.toString())
+    }
 });
 
 module.exports = router;
