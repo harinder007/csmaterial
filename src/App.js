@@ -26,7 +26,7 @@ const THEME = createTheme({
     },
   },
   typography: {
-   "fontFamily": `'Poppins', sans-serif;`,
+   "fontFamily": `'Montserrat', sans-serif;`,
    "fontSize": 16,
    "fontWeightLight": 300,
    "fontWeightRegular": 400,
@@ -39,7 +39,6 @@ function App() {
   return (
       <ThemeProvider theme={THEME}>
       <BrowserRouter>
-      <Navbar/>
       <Routes>
         <Route path="/" element={<Home isAdmin={false}/>}/>
         <Route path="/admin" element={<Admin/>}/>

@@ -5,6 +5,7 @@ import AdminEntry from './Admin/AdminEntry'
 import { useState } from 'react'
 import { ButtonGroup, Button, Fab } from '@mui/material'
 import { Navigate } from 'react-router-dom'
+import Navbar from './Navbar'
 
 
 function Home({isAdmin}) {
@@ -105,9 +106,20 @@ function Home({isAdmin}) {
   }
 
   return (
+    <>
+    <header>
+      <Navbar tab="home"/>
+      <section className="hero">
+        <div className="hero-content">
+          <h1 className="hero-heading">Ultimate Hub for<br/> Computer Science Students</h1>
+          <p className="hero-subheading">Previous Year Papers, Solved Assignments, Study Material and more</p>
+        </div>
+      </section>
+    </header>
     <div className='main'>
       {mainPage}
     </div>
+    </>
   )
 }
 
