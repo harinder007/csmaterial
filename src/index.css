@@ -104,7 +104,7 @@ header {
     align-items: center;
     background-color: black;
     width: 100%;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .hero-heading {
@@ -118,9 +118,37 @@ header {
     font-size: 1.4rem;
 }
 
-.heading {
+.selector {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 80vw;
+    height: 30%;
+    margin: 0 auto;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.bread-button{
+    background-color: transparent;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    font-family:'Montserrat', sans-serif;
+}
+
+.bread-button:hover {
+    cursor: pointer;
+}
+
+.btn-active {
+    font-weight: 700;
+    color: var(--text-tirtiary);
+}
+
+.selection-heading {
     display: inline;
-    font-size: 40px;
+    font-size: 2.4rem;
 }
 
 .main-header {
@@ -201,7 +229,35 @@ header {
     margin-top: 10px;
 }
 
-@media (max-width:700px){
+
+
+@media (max-width:970px) {
+    html {
+        font-size: 15px;
+    }
+    header {
+        height: 50%;
+    }
+    
+    .hero-heading {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-subheading {
+        font-size: 1.2rem;
+    }
+    .selector {
+        height: 50%;
+    }
+    .home-btns {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+@media (max-width:750px){
     .menu{
         position: absolute;
         right: 0;
@@ -258,11 +314,36 @@ header {
     }
     
     .hero-heading {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-subheading {
+        font-size: 0.8rem;
+    }
+
+    .selection-heading {
+        display: inline;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width:500px) {
+    header {
+        height: 50%;
+    }
+    
+    .hero-heading {
         font-size: 1.5rem;
         margin-bottom: 1rem;
     }
     
     .hero-subheading {
         font-size: 0.6rem;
+    }
+
+    .selection-heading {
+        display: inline;
+        font-size: 1.2rem;
     }
 }

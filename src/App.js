@@ -13,10 +13,10 @@ import { WindowSharp } from "@mui/icons-material";
 const THEME = createTheme({
   palette: {
     primary: {
-      light: '#8eb4e5',
-      main: '#4483d5',
-      dark: '#2f5b95',
-      contrastText: '#fff',
+      light: '#66646d',
+      main: '#24222F',
+      dark: '#191821',
+      contrastText: '#D4CDF4',
     },
     secondary: {
       light: '#c2cfe4',

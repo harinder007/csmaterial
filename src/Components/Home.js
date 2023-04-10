@@ -3,9 +3,11 @@ import Header from './Home/Header'
 import Options from './Home/Options'
 import AdminEntry from './Admin/AdminEntry'
 import { useState } from 'react'
-import { ButtonGroup, Button, Fab } from '@mui/material'
+import { ButtonGroup, Button, Fab, Breadcrumbs, Typography, Link } from '@mui/material'
 import { Navigate } from 'react-router-dom'
+import addSuffix from '../Utility/addSuffix'
 import Navbar from './Navbar'
+import { Fade } from 'react-reveal'
 
 
 function Home({isAdmin}) {
@@ -34,22 +36,43 @@ function Home({isAdmin}) {
   console.log(page + stream + sem + material)
   const pageOne = (
     <>
-      <div className='main-header'>
-        <Header text="Select your class"/>
+      <Fade>
+      <div className='selection-header'>
+          <Header text="Get started, choose your class"/>
+        <Breadcrumbs color="#fff" aria-label="breadcrumb">
+        <Link
+          underline='none'
+          color="#FFB524"
+          sx={{fontWeight:700}}
+        >
+         / Class
+        </Link>
+        </Breadcrumbs>
+        
       </div>
       <div className="home-btns">
         <Options values={['MCA','MSC','MSC DS']} incPage={incrementPage} setValue={setStream}/>
       </div>
+      </Fade>
     </>
   )
 
   const pageTwo = (
     <>
-      <div className='main-header'>
-      <Fab color="secondary" aria-label="back" onClick={decrementPage}>
-            <i className="ph-bold ph-arrow-left"></i>
-      </Fab>
-      <Header text="Select your sem"/>
+       <div className='selection-header'>
+        <Header text="Now choose your semester"/>
+        <Breadcrumbs color="#fff" aria-label="breadcrumb">
+        <Link
+          underline="hover"
+          color="#fff"
+          href="/"
+        >
+         / Class
+        </Link>
+        <button className='bread-button btn-active'>
+          Sem
+        </button>
+        </Breadcrumbs>
       </div>
       <div className="home-btns">
         <Options values={[1,2,3,4]} incPage={incrementPage} setValue={setSem}/>
@@ -59,16 +82,27 @@ function Home({isAdmin}) {
 
   const pageThree = (
     <>
-      <div className='main-header'>
-      <Fab color="secondary" aria-label="back" onClick={decrementPage}>
-            <i className="ph-bold ph-arrow-left"></i>
-        </Fab>
-        <Header text="Here you go"/>
+       <div className='selection-header'>
+        <Header text= {`${stream} ${addSuffix(sem)} sem material`} />
+        <Breadcrumbs color="#fff" aria-label="breadcrumb">
+        <Link
+          underline="hover"
+          color="#fff"
+          href="/"
+        >
+         / Class
+        </Link>
+        <button className='bread-button' onClick={()=> {setPage(1)}}>
+          Sem
+        </button>
+        <button className='bread-button btn-active'>
+          Material
+        </button>
+        </Breadcrumbs>
       </div>
-      <ButtonGroup variant="contained" size="large" orientation="vertical"
-        aria-label="vertical outlined button group">
+      <div className="home-btns">
         <Options values={["Previous Year", "Assignment","Study Material","Syllabus"]} incPage={incrementPage} setValue={setMaterial}/>
-      </ButtonGroup>
+      </div>
     </>
   )
 
@@ -116,7 +150,7 @@ function Home({isAdmin}) {
         </div>
       </section>
     </header>
-    <div className='main'>
+    <div className='selector'>
       {mainPage}
     </div>
     </>
