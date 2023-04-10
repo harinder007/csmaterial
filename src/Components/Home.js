@@ -7,7 +7,6 @@ import { ButtonGroup, Button, Fab, Breadcrumbs, Typography, Link } from '@mui/ma
 import { Navigate } from 'react-router-dom'
 import addSuffix from '../Utility/addSuffix'
 import Navbar from './Navbar'
-import { Fade } from 'react-reveal'
 
 
 function Home({isAdmin}) {
@@ -36,7 +35,6 @@ function Home({isAdmin}) {
   console.log(page + stream + sem + material)
   const pageOne = (
     <>
-      <Fade>
       <div className='selection-header'>
           <Header text="Get started, choose your class"/>
         <Breadcrumbs color="#fff" aria-label="breadcrumb">
@@ -53,8 +51,7 @@ function Home({isAdmin}) {
       <div className="home-btns">
         <Options values={['MCA','MSC','MSC DS']} incPage={incrementPage} setValue={setStream}/>
       </div>
-      </Fade>
-    </>
+git     </>
   )
 
   const pageTwo = (
