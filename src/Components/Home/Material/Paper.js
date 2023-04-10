@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import addSuffix from '../../../Utility/addSuffix';
 import { Card,Typography, CardActions, CardContent, IconButton, Tooltip, Popover, Snackbar } from '@mui/material';
-import DeleteIcon from '@mui/icons-material/Delete';
 import { WhatsappShareButton, WhatsappIcon,
         EmailShareButton, EmailIcon,
       TelegramShareButton, TelegramIcon,

@@ -8,7 +8,6 @@ import AdminDashboard from "./Components/Admin/AdminDashboard";
 import { BrowserRouter, Routes, Route,Navigate } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material";
 import Papers from "./Components/Home/Material"
-import { WindowSharp } from "@mui/icons-material";
 
 const THEME = createTheme({
   palette: {

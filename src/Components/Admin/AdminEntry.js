@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Snackbar, Alert, IconButton } from '@mui/material';
-import {CloseIcon} from '@mui/icons-material';
 
 
 function AdminEntry({data}) {
