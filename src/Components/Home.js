@@ -51,7 +51,7 @@ function Home({isAdmin}) {
       <div className="home-btns">
         <Options values={['MCA','MSC','MSC DS']} incPage={incrementPage} setValue={setStream}/>
       </div>
-git     </>
+    </>
   )
 
   const pageTwo = (
