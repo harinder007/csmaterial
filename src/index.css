@@ -146,6 +146,67 @@ header {
     color: var(--text-tirtiary);
 }
 
+.about {
+    max-width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem auto;
+    background: rgb(25,25,25);
+    background: linear-gradient(0deg, rgba(25,25,25,1) 0%, #4a4972 100%);
+    border-radius: 3rem;
+    padding: 2rem;
+}
+
+.profile > img{
+    width: 16rem;
+    border-radius: 1rem;
+}
+
+.profiles {
+    display: flex;
+    gap: 4rem;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-heading {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.name {
+    margin-top: 1rem;
+}
+
+.about-description {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 1.5rem 0;
+    width: 60%;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+/* contact styling */
+
+  .contact-heading {
+    text-align: center;
+  }
+  
+  .mail {
+    font-size: 3rem;
+    text-align: center;
+    background: -webkit-linear-gradient(20deg, rgb(75, 240, 138) 0%, rgb(243, 212, 72) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
 .selection-heading {
     display: inline;
     font-size: 2.4rem;
@@ -229,7 +290,26 @@ header {
     margin-top: 10px;
 }
 
+@media(max-width:1350px) {
+.about-heading {
+    font-size: 2rem;
+}
+.name {
+    margin-top: 1rem;
+}
 
+.about-description {
+    width: 80%;
+}
+.contact-heading {
+    font-size: 1.2rem;
+  }
+  
+  .mail {
+    font-size: 2rem;
+  }
+
+}
 
 @media (max-width:970px) {
     html {
@@ -255,6 +335,22 @@ header {
         flex-direction: column;
         width: 100%;
     }
+
+    .about-heading {
+        font-size: 1.7rem;
+    }
+    .name {
+        margin-top: 1rem;
+    }
+    
+    .about-description {
+        width: 95%;
+    }
+    .contact-heading {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.5rem;
+      }
 }
 
 @media (max-width:750px){
@@ -326,6 +422,34 @@ header {
         display: inline;
         font-size: 2rem;
     }
+    
+    .profile >img {
+        width: 11rem;
+    }
+
+    .socials img {
+        width: 2.5rem;
+    }
+
+    .about-heading {
+        font-size: 1.1rem;
+    }
+    .name {
+        font-size: 1.3rem;
+    }
+    
+    .about-description {
+        width: 95%;
+    }
+    .contact-heading {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.3rem;
+      }
+      
+      .mail {
+        font-size: 2rem;
+      }
 }
 
 @media (max-width:500px) {
@@ -346,4 +470,45 @@ header {
         display: inline;
         font-size: 1.2rem;
     }
+
+    .profiles {
+        gap: 1rem;
+    }
+
+    .profile >img {
+        width: 11rem;
+    }
+
+    .socials img {
+        width: 2rem;
+    }
+
+    .about {
+        margin:0 auto;
+        padding: 1rem 2rem;
+    }
+
+    .about-heading {
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    .name {
+        font-size: 1.2rem;
+    }
+    
+    .about-description {
+        width: 100%;
+        font-size: 1rem;
+    }
+    .contact-heading {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        margin-top: 0;
+      }
+      
+      .mail {
+        font-size: 1.5rem;
+      }
 }
