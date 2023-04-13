@@ -4,6 +4,7 @@ import { Snackbar, Alert, IconButton } from '@mui/material';
 
 function AdminEntry({data}) {
 
+  const token = window.localStorage.getItem('token');
   const [year, setYear] = useState();
   const [viewLink, setViewLink] = useState("");
   const [downloadLink, setDownloadLink] = useState("");
@@ -42,7 +43,8 @@ function AdminEntry({data}) {
   url: `http://localhost:5000`,
   body: JSON.stringify(paperData),
   headers: {
-    "Content-type": "application/json; charset=UTF-8"
+    "Content-type": "application/json; charset=UTF-8",
+    "x-auth-token": token
   }
   }).then((res)=>{
     return res.json();

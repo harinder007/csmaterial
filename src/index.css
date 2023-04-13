@@ -89,7 +89,18 @@ header {
     background-size:cover;
 }
 
+.material-header {
+    height: 50%;
+}
+
 .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+}
+
+.material-hero {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -210,6 +221,50 @@ header {
 .selection-heading {
     display: inline;
     font-size: 2.4rem;
+}
+
+.material {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+}
+
+.results {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.pdf-viewer {
+    position: absolute;
+    width: 70vw;
+    height: 80vh;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto auto;
+    z-index: 15;
+}
+
+.pdf-viewer iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.pdf-close {
+    background-color: black;
+    position: absolute;
+    font-size: 2rem;
+    right: 0;
+    top: 0;
+    padding:0.5rem;
+    margin: 0.7rem;
+    z-index: 999;
+}
+
+.pdf-close:hover {
+    cursor: pointer;
 }
 
 .main-header {

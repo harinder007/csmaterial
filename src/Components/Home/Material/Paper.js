@@ -1,14 +1,12 @@
 import React, { useState } from 'react'
-import addSuffix from '../../../Utility/addSuffix';
-import { Card,Typography, CardActions, CardContent, IconButton, Tooltip, Popover, Snackbar } from '@mui/material';
+import { Button,Card,Typography, CardActions, CardContent, IconButton, Tooltip, Popover, Snackbar } from '@mui/material';
 import { WhatsappShareButton, WhatsappIcon,
-        EmailShareButton, EmailIcon,
       TelegramShareButton, TelegramIcon,
     FacebookMessengerShareButton, FacebookMessengerIcon
    } from 'react-share';
 
 
-function Paper({data}) {
+function Paper({data, openPdf, closePdf}) {
   
   const {className, downloadLink, sem, viewLink, year, ...rest} = data;
   const [anchorEl, setAnchorEl] = useState(null);
@@ -30,6 +28,7 @@ function Paper({data}) {
   const id = open ? 'simple-popover' : undefined;
 
   return (
+    <>
     <Card variant="outlined" sx={{ color:'white', minWidth: 275, backgroundColor: '#151515', minHeight:120,  mb:5}}>
       <CardContent sx={{pb:0}}>
         <Typography variant="h6" display="block">
@@ -38,18 +37,19 @@ function Paper({data}) {
       </CardContent>
       <CardActions>
       <Tooltip title="View">
-        <a href={viewLink}>
-      <IconButton sx ={{color:'#a8bbd9'}} aria-label="add to shopping cart">
+      <IconButton onClick={()=> {
+        console.log(viewLink)
+        openPdf(viewLink)
+        }} sx ={{color:'#a8bbd9'}} aria-label="add to shopping cart">
         <i class="ph-bold ph-eye"></i>
       </IconButton>
-        </a>
       </Tooltip>
       <Tooltip title="Download">
         <a href={downloadLink}>
       <IconButton color="secondary" aria-label="add to shopping cart">
         <i class="ph-bold ph-download-simple"></i>
       </IconButton>
-        </a>
+        </a> 
       </Tooltip>
       <Snackbar
             open={openSnack}
@@ -102,7 +102,9 @@ function Paper({data}) {
       </a>
       </Tooltip>
       </CardActions>
-    </Card>)
+    </Card>
+    </>
+    )
 }
 
 export default Paper

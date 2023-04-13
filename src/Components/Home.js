@@ -7,6 +7,7 @@ import { ButtonGroup, Button, Fab, Breadcrumbs, Typography, Link } from '@mui/ma
 import { Navigate } from 'react-router-dom'
 import addSuffix from '../Utility/addSuffix'
 import Navbar from './Navbar'
+import Hero from './Hero'
 
 
 function Home({isAdmin}) {
@@ -138,15 +139,8 @@ function Home({isAdmin}) {
 
   return (
     <>
-    <header>
-      <Navbar tab="home"/>
-      <section className="hero">
-        <div className="hero-content">
-          <h1 className="hero-heading">Ultimate Hub for<br/> Computer Science Students</h1>
-          <p className="hero-subheading">Previous Year Papers, Solved Assignments, Study Material and more</p>
-        </div>
-      </section>
-    </header>
+    {!isAdmin && <Hero isHome={true}/>}
+
     <div className='selector'>
       {mainPage}
     </div>

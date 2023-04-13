@@ -17,7 +17,10 @@ connectDB();
 app.use(express.json());
 
 // Define Routes
-app.use('/api/papers', require('./routes/api/paper'));
+app.use('/api/papers', require('./routes/api/papers'));
+app.use('/api/assignments', require('./routes/api/assignments'));
+app.use('/api/studyMaterial', require('./routes/api/studyMaterial'));
+app.use('/api/syllabuses', require('./routes/api/syllabuses'));
 app.use('/api/auth', require('./routes/api/auth'));
 
 // Serve static assets in production

@@ -1,32 +1,41 @@
 const express = require('express')
 const Paper = require('../../models/Paper')
 const router = express.Router();
+const auth = require('../../middleware/auth');
 
 // @route   GET api/papers
-// @desc    IP address verification of papers
+// @desc   get all papers
 // @access  Public
 router.get('/', async(req, res) => {
-    console.log('hi')
-     const papers = await Paper.find({});
-     res.send(papers);
+     try {
+        const papers = await Paper.find({});
+        res.send(papers);
+     } catch (error) {
+        res.send({"err":error.toString()})
+        console.log(error.toString())
+     }
 });
 
 // @route   GET api/papers
-// @desc    IP address verification of papers
-// @access  Public
-router.get('/deleteAll', async(req, res) => {
-    await Paper.deleteMany({});
-     res.send("success");
+// @desc    delete all papers
+// @access  Private
+router.delete('/', async(req, res) => {
+    try {
+        await Paper.deleteMany({});
+         res.send("success");
+    } catch (error) {
+        res.send({"err":error.toString()})
+        console.log(error.toString())
+    }
 });
 
 
 // @route   POST api/papers
-// @desc    IP address verification of papers
-// @access  Public
-router.post('/', async(req, res) => {
+// @desc    add new paper
+// @access  Private
+router.post('/',auth, async(req, res) => {
     let { className, sem, year, viewLink, downloadLink} =
     req.body;
-    console.log("sem", sem)
     let paper;
     try {
         const paperFields = {
