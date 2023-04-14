@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react'
 import Hero from '../Hero';
 import Header from './Header';
 import addSuffix from '../../Utility/addSuffix';
-import { Typography } from '@mui/material';
+import { Typography, Fab } from '@mui/material';
 import Paper from './Material/Paper'
+import { Link } from 'react-router-dom';
 
 function Material() {
 
@@ -55,23 +56,23 @@ function Material() {
       </Typography>
       <div className="results">
       {currentMaterial.map(element => 
-      <Paper data={element} openPdf={openPdf} closePdf={closePdf} />
+      <Paper data={element} openPdf={openPdf} closePdf={closePdf} material={data.materialType.toLowerCase()}/>
       )}
       </div>
     </section>
   }
 
-  else if(data.materialType.toLowerCase() == "assignment") {
-    route = "http://127.0.0.1:5000/api/assignments";
+  else if(data.materialType.toLowerCase() == "programs") {
+    route = "http://127.0.0.1:5000/api/programs";
     result = currentMaterial && 
     <section className="material">
-      <Header text={`${(data.className).toUpperCase()} ${addSuffix(data.sem)} Sem Assignments`}/>
+      <Header text={`${(data.className).toUpperCase()} ${addSuffix(data.sem)} Sem Programs`}/>
       <Typography variant="overline" display="block" gutterBottom>
         {`${currentMaterial.length} results found`}
       </Typography>
       <div className="results">
       {currentMaterial.map(element => 
-      <Paper data={element}/>
+      <Paper data={element} openPdf={openPdf} closePdf={closePdf} material={data.materialType.toLowerCase()}/>
       )}
       </div>
     </section>
@@ -86,7 +87,7 @@ function Material() {
       </Typography>
       <div className="results">
       {currentMaterial.map(element => 
-      <Paper data={element}/>
+      <Paper data={element} openPdf={openPdf} closePdf={closePdf} material={data.materialType.toLowerCase()}/>
       )}
       </div>
     </section>
@@ -101,7 +102,7 @@ function Material() {
       </Typography>
       <div className="results">
       {currentMaterial.map(element => 
-      <Paper data={element}/>
+      <Paper data={element} openPdf={openPdf} closePdf={closePdf} material={data.materialType.toLowerCase()}/>
       )}
       </div>
     </section>
@@ -121,11 +122,20 @@ function Material() {
   console.log(data)}
 )}
 
-
   return (
     <>
       <Hero isHome={false}/>
+      <div className='main-header'>
+      <span className="back-btn">
+        <Link to="/">
+        <Fab color="primary" aria-label="back">
+              <i className="ph-bold ph-arrow-left"></i>
+        </Fab>
+        </Link>
+      </span>
       {currentMaterial && result}
+      </div>
+      
       {
       isPdfOpen &&  
       <div className="pdf-viewer">

@@ -216,6 +216,7 @@ header {
     background: -webkit-linear-gradient(20deg, rgb(75, 240, 138) 0%, rgb(243, 212, 72) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    padding: 1rem;
   }
 
 .selection-heading {
@@ -226,7 +227,7 @@ header {
 .material {
     display: flex;
     flex-direction: column;
-    margin: 2rem;
+    margin: 2rem 0.5rem;
 }
 
 .results {
@@ -269,8 +270,13 @@ header {
 
 .main-header {
     display: flex;
-    align-items: center;
-    gap:20px;
+    align-items: baseline;
+    gap:1rem;
+    padding: 1rem;
+}
+
+.back-btn {
+    width: 3rem;
 }
 
 .main {
@@ -322,7 +328,7 @@ header {
     height: 25px;
 }
 
-.year-input, .link-input, .link-input-2 {
+.subject-input, .topic-input, .year-input, .link-input, .link-input-2 {
     display: flex;
     width: 300px;
     justify-content:space-between;
@@ -363,7 +369,6 @@ header {
   .mail {
     font-size: 2rem;
   }
-
 }
 
 @media (max-width:970px) {

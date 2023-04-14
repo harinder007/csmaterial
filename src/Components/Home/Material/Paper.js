@@ -6,11 +6,28 @@ import { WhatsappShareButton, WhatsappIcon,
    } from 'react-share';
 
 
-function Paper({data, openPdf, closePdf}) {
+function Paper({data, openPdf, closePdf, material}) {
   
-  const {className, downloadLink, sem, viewLink, year, ...rest} = data;
+  const {className, downloadLink, sem, viewLink, year, subject, topic, ...rest} = data;
   const [anchorEl, setAnchorEl] = useState(null);
   const [openSnack, setOpenSnack] = useState(false)
+
+  let isYear, isSubject, isTopic = false;
+
+  if(material === "previous%20year"){
+    isYear = true;
+  }
+  else if(material === "programs"){
+    isTopic = true;
+  }
+  else if(material === "study%20material"){
+    isTopic = true;
+    isSubject = true;
+  }
+  else{
+    isSubject = true;
+  }
+
   const handleCopyClick = () => {
     setOpenSnack(true)
     navigator.clipboard.writeText(window.location.toString())
@@ -31,9 +48,16 @@ function Paper({data, openPdf, closePdf}) {
     <>
     <Card variant="outlined" sx={{ color:'white', minWidth: 275, backgroundColor: '#151515', minHeight:120,  mb:5}}>
       <CardContent sx={{pb:0}}>
-        <Typography variant="h6" display="block">
-          Year: {year}
+        {isYear && <Typography variant="h6" display="block">
+          {year} Papers
         </Typography>
+        }
+        {isSubject && <Typography variant="h6" display="block">
+          {subject}
+        </Typography>}
+        {isTopic && <Typography variant="h6" display="block">
+          {topic}
+        </Typography>}
       </CardContent>
       <CardActions>
       <Tooltip title="View">

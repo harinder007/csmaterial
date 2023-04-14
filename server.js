@@ -18,7 +18,7 @@ app.use(express.json());
 
 // Define Routes
 app.use('/api/papers', require('./routes/api/papers'));
-app.use('/api/assignments', require('./routes/api/assignments'));
+app.use('/api/programs', require('./routes/api/programs'));
 app.use('/api/studyMaterial', require('./routes/api/studyMaterial'));
 app.use('/api/syllabuses', require('./routes/api/syllabuses'));
 app.use('/api/auth', require('./routes/api/auth'));

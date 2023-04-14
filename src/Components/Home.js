@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from './Home/Header'
 import Options from './Home/Options'
 import AdminEntry from './Admin/AdminEntry'
@@ -6,34 +6,30 @@ import { useState } from 'react'
 import { ButtonGroup, Button, Fab, Breadcrumbs, Typography, Link } from '@mui/material'
 import { Navigate } from 'react-router-dom'
 import addSuffix from '../Utility/addSuffix'
-import Navbar from './Navbar'
 import Hero from './Hero'
+import { useLocation } from 'react-router-dom'
 
 
-function Home({isAdmin}) {
-
+function Home({isAdmin, data1}) {
+  
   const [page, setPage] = useState(0);
-  const [stream, setStream] = useState('');
-  const [sem, setSem] = useState(0);
+  const [stream, setStream] = useState("");
+  const [sem, setSem] = useState("");
   const [material, setMaterial] = useState('');
-  const [data, setData] = useState({});
+  console.log(isAdmin)
+  console.log(data1)
+  let data = {
+    stream: stream,
+    sem: sem,
+    material: material
+  }
 
-  const incrementPage = () => {setPage(page + 1)
-    setData({
-      stream: stream,
-      sem: sem,
-      material: material
-    })
-  };
-  const decrementPage = () => {setPage(page - 1)
-    setData({
-      stream: stream,
-      sem: sem,
-      material: material
-    })
-  };
-
-  console.log(page + stream + sem + material)
+  console.log(material)
+  console.log(page)
+  console.log(data)
+  const incrementPage = () => {setPage(page + 1)};
+  const decrementPage = () => {setPage(page - 1)};
+  
   const pageOne = (
     <>
       <div className='selection-header'>
@@ -99,7 +95,7 @@ function Home({isAdmin}) {
         </Breadcrumbs>
       </div>
       <div className="home-btns">
-        <Options values={["Previous Year", "Assignment","Study Material","Syllabus"]} incPage={incrementPage} setValue={setMaterial}/>
+        <Options values={["Previous Year", "Programs","Study Material","Syllabus"]} incPage={incrementPage} setValue={setMaterial}/>
       </div>
     </>
   )

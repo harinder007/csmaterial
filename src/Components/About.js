@@ -36,13 +36,6 @@ function About() {
       <h2 class="contact-heading"><span>If you have any suggestions or feedback,</span> <span>please don't hesitate to reach out to us.</span></h2>
       <h1 className="mail">csmaterial007@gmail.com</h1>
     </section>
-      {/* <footer>
-        <h6 class="end-note">Made with 💙 by Amit Kharod</h6>
-        <div class="source-code">
-          <img src="./images/pngs/Github.png" alt="" />
-          <h6>Source Code</h6>
-        </div>
-      </footer> */}
     </>
   )
 }

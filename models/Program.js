@@ -1,20 +1,12 @@
 const mongoose = require('mongoose')
 
-const AssignmentSchema = mongoose.Schema({
+const ProgramSchema = mongoose.Schema({
     className:{
       type: String,
         required: true,
     },
     sem:{
       type: Number,
-        required: true,
-    },
-    year: {
-      type: Number,
-      required: true,
-    },
-    subject: {
-        type: String,
         required: true,
     },
     topic: {
@@ -31,5 +23,5 @@ const AssignmentSchema = mongoose.Schema({
     }
   });
   
-  module.exports = mongoose.model('assignment', AssignmentSchema);
+  module.exports = mongoose.model('program', ProgramSchema);
   
