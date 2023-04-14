@@ -26,7 +26,7 @@ function AdminEntry({data}) {
       viewLink: viewLink,
       downloadLink: downloadLink
     };
-    url = `${process.env.URL}/api/papers`;
+    url = `${process.env.REACT_APP_URL}/api/papers`;
     isYear = true;
   }
 
@@ -38,7 +38,7 @@ function AdminEntry({data}) {
       viewLink: viewLink,
       downloadLink: downloadLink
     };
-    url = `${process.env.URL}/api/syllabus`;
+    url = `${process.env.REACT_APP_URL}/api/syllabuses`;
     isSubject = true;
   }
   
@@ -51,7 +51,7 @@ function AdminEntry({data}) {
       viewLink: viewLink,
       downloadLink: downloadLink
     };
-    url = `${process.env.URL}/api/studyMaterial`;
+    url = `${process.env.REACT_APP_URL}/api/studyMaterial`;
     isSubject = true;
     isTopic = true;
   }
@@ -63,7 +63,7 @@ function AdminEntry({data}) {
       viewLink: viewLink,
       downloadLink: downloadLink
     };
-    url = `${process.env.URL}/api/programs`;
+    url = `${process.env.REACT_APP_URL}/api/programs`;
     isTopic = true
   }
 
@@ -88,7 +88,7 @@ function AdminEntry({data}) {
   const uploadData = async()=> {
   await fetch(url, {
   method: "POST",
-  url: process.env.URL,
+  url: process.env.REACT_APP_URL,
   body: JSON.stringify(postData),
   headers: {
     "Content-type": "application/json; charset=UTF-8",

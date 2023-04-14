@@ -47,7 +47,7 @@ function Material() {
   let route;
 
   if(data.materialType.toLowerCase() == "previous%20year") {
-    route = "http://127.0.0.1:5000/api/papers";
+    route = `${process.env.REACT_APP_URL}/api/papers`;
     result = currentMaterial && 
     <section className="material">
       <Header text={`${(data.className).toUpperCase()} ${addSuffix(data.sem)} Sem Papers`}/>
@@ -63,7 +63,7 @@ function Material() {
   }
 
   else if(data.materialType.toLowerCase() == "programs") {
-    route = "http://127.0.0.1:5000/api/programs";
+    route = `${process.env.REACT_APP_URL}/api/programs`;
     result = currentMaterial && 
     <section className="material">
       <Header text={`${(data.className).toUpperCase()} ${addSuffix(data.sem)} Sem Programs`}/>
@@ -78,7 +78,7 @@ function Material() {
     </section>
   }
   else if(data.materialType.toLowerCase() == "study%20material") {
-    route = "http://127.0.0.1:5000/api/studyMaterial";
+    route = `${process.env.REACT_APP_URL}/api/studyMaterial`;
     result = currentMaterial && 
     <section className="material">
       <Header text={`${(data.className).toUpperCase()} ${addSuffix(data.sem)} Sem Study Material`}/>
@@ -93,7 +93,7 @@ function Material() {
     </section>
   }
   else if(data.materialType.toLowerCase() == "syllabus") {
-    route = "http://127.0.0.1:5000/api/syllabuses";
+    route = `${process.env.REACT_APP_URL}/api/syllabuses`;
     result = currentMaterial && 
     <section className="material">
       <Header text={`${(data.className).toUpperCase()} ${addSuffix(data.sem)} Sem Syllabus`}/>

@@ -59,8 +59,8 @@ function Home({isAdmin, data1}) {
         <Link
           underline="hover"
           color="#fff"
-          href="/"
-        >
+          href={isAdmin ? '/adminDashboard' : '/'}
+          >
          / Class
         </Link>
         <button className='bread-button btn-active'>
@@ -82,7 +82,7 @@ function Home({isAdmin, data1}) {
         <Link
           underline="hover"
           color="#fff"
-          href="/"
+          href={isAdmin ? '/adminDashboard' : '/'}
         >
          / Class
         </Link>
