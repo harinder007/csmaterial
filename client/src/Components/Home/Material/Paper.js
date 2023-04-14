@@ -46,18 +46,18 @@ function Paper({data, openPdf, closePdf, material}) {
 
   return (
     <>
-    <Card variant="outlined" sx={{ color:'white', minWidth: 275, backgroundColor: '#151515', minHeight:120,  mb:5}}>
+    <Card className='card' variant="outlined" sx={{ color:'white', width: "20rem", backgroundColor: '#151515', minHeight:120,  mb:5}}>
       <CardContent sx={{pb:0}}>
-        {isYear && <Typography variant="h6" display="block">
+        {isYear && <h5>
           {year} Papers
-        </Typography>
+        </h5>
         }
-        {isSubject && <Typography variant="h6" display="block">
+        {isSubject && <h5>
           {subject}
-        </Typography>}
-        {isTopic && <Typography variant="h6" display="block">
+        </h5>}
+        {isTopic && <h5>
           {topic}
-        </Typography>}
+        </h5>}
       </CardContent>
       <CardActions>
       <Tooltip title="View">
