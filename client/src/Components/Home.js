@@ -112,7 +112,7 @@ function Home({isAdmin, data1}) {
     <Fab color="primary" aria-label="back" onClick={decrementPage}>
             <i className="ph-bold ph-arrow-left"></i>
       </Fab>
-        <Header text={`Upload ${material}` }/>
+        <Header text={`Upload ${material} of ${stream} ${sem}`}/>
       </div>
       <AdminEntry data={data}/>
     </>
