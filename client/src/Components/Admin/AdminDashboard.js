@@ -10,8 +10,9 @@ function AdminDashboard() {
       return <Navigate to="/"/>;
   }
 
+  console.log(process.env.REACT_APP_URL)
   if(token){
-     fetch("http://127.0.0.1:5000/api/auth",{
+     fetch(`${process.env.REACT_APP_URL}/api/auth`,{
       headers: {
         "x-auth-token": token
     }

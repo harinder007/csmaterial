@@ -26,7 +26,7 @@ function AdminEntry({data}) {
       viewLink: viewLink,
       downloadLink: downloadLink
     };
-    url = "http://localhost:5000/api/papers";
+    url = `${process.env.URL}/api/papers`;
     isYear = true;
   }
 
@@ -38,7 +38,7 @@ function AdminEntry({data}) {
       viewLink: viewLink,
       downloadLink: downloadLink
     };
-    url = "http://localhost:5000/api/syllabus";
+    url = `${process.env.URL}/api/syllabus`;
     isSubject = true;
   }
   
@@ -51,7 +51,7 @@ function AdminEntry({data}) {
       viewLink: viewLink,
       downloadLink: downloadLink
     };
-    url = "http://localhost:5000/api/studyMaterial";
+    url = `${process.env.URL}/api/studyMaterial`;
     isSubject = true;
     isTopic = true;
   }
@@ -63,7 +63,7 @@ function AdminEntry({data}) {
       viewLink: viewLink,
       downloadLink: downloadLink
     };
-    url = "http://localhost:5000/api/programs";
+    url = `${process.env.URL}/api/programs`;
     isTopic = true
   }
 
@@ -88,7 +88,7 @@ function AdminEntry({data}) {
   const uploadData = async()=> {
   await fetch(url, {
   method: "POST",
-  url: `http://localhost:5000`,
+  url: process.env.URL,
   body: JSON.stringify(postData),
   headers: {
     "Content-type": "application/json; charset=UTF-8",
