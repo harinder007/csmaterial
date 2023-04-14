@@ -24,6 +24,7 @@ function Admin() {
             "Content-type": "application/json; charset=UTF-8"
         }
         }).then((res)=>{
+            console.log(res)
             return res.json()
         }).then((data)=>{
             if(data.token){
