@@ -23,7 +23,7 @@ router.post('/', async(req, res) => {
     try {
         const admin = await Admin.find({username: username})
         if(admin.length==0) {
-            return res.status(400).send({msg:"Authorization Failed"})
+            return res.status(400).send({"msg":"Authorization Failed"})
         }    
         const isAdmin = admin[0].password === password;
         
