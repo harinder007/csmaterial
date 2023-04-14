@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Navigate } from 'react-router-dom';
 import AdminDashboard from './Admin/AdminDashboard';
 
+
 function Admin() {
 
     const [userName, setUserName] = useState('');
@@ -13,11 +14,11 @@ function Admin() {
     if(goToDashboard){
         return <Navigate to="/adminDashboard"/>;
     }
-
+    console.log(process.env.REACT_APP_URL)
     const login = async() => {
-        await fetch("http://localhost:5000/api/auth", {
+        await fetch(`${process.env.REACT_APP_URL}/api/auth`, {
         method: "POST",
-        url: `http://localhost:5000`,
+        url: process.env.REACT_APP_URL,
         body: JSON.stringify({username: userName, password:password}),
         headers: {
             "Content-type": "application/json; charset=UTF-8"
