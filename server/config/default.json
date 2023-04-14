@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://amit:TewTFc2JfjonIcEy@cluster01.4hqcj.mongodb.net/?retryWrites=true&w=majority",
+  "jwtSecret": "Amit kharod & Harinder Yadav"
+}
