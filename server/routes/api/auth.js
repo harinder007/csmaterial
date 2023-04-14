@@ -3,7 +3,7 @@ const router = express.Router()
 const Admin = require('../../models/Admin')
 const auth = require('../../middleware/auth');
 const jwt = require('jsonwebtoken')
-const config = require('config')
+require('dotenv').config()
 
 // @route   GET api/auth
 // @desc    Admin Authentication
@@ -39,7 +39,7 @@ router.post('/', async(req, res) => {
 
         jwt.sign(
             payload,
-            config.get('jwtSecret'),
+            process.env.JWTSECRET,
             {expiresIn: 1500},
             (err, token) =>{
                 if(err) throw err;
