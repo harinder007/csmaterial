@@ -292,6 +292,14 @@ header {
     padding: 10px;
 }
 
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 1rem !important;
+    font-size: 1.5rem !important;
+}
+
 .admin-login {
     display: flex;
     flex-direction: column;
