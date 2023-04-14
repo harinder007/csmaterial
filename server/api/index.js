@@ -1,5 +1,5 @@
 const express = require('express');
-const connectDB = require('./config/mongodb');
+const connectDB = require('../config/mongodb');
 const cors = require('cors');
 const path = require('path');
 
@@ -17,11 +17,11 @@ connectDB();
 app.use(express.json());
 
 // Define Routes
-app.use('/api/papers', require('./routes/api/papers'));
-app.use('/api/programs', require('./routes/api/programs'));
-app.use('/api/studyMaterial', require('./routes/api/studyMaterial'));
-app.use('/api/syllabuses', require('./routes/api/syllabuses'));
-app.use('/api/auth', require('./routes/api/auth'));
+app.use('/api/papers', require('../routes/api/papers'));
+app.use('/api/programs', require('../routes/api/programs'));
+app.use('/api/studyMaterial', require('../routes/api/studyMaterial'));
+app.use('/api/syllabuses', require('../routes/api/syllabuses'));
+app.use('/api/auth', require('../routes/api/auth'));
 
 // Serve static assets in production
 
