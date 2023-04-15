@@ -61,7 +61,9 @@ function Navbar({tab}) {
 
     return (
       <nav className={dropdownNav ? "navbar nav-open" : "navbar"}>
+        <a href="/">
         <h2 className="logo">csmaterial<span>.in</span></h2>
+        </a>
         <button className="nav-btn" onClick={navHandle}>
           <span className="menu-btn">
             <i class="ph-bold ph-list"></i>

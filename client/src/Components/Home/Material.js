@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react'
 import Hero from '../Hero';
 import Header from './Header';
 import addSuffix from '../../Utility/addSuffix';
-import { Typography, Fab } from '@mui/material';
+import { Typography, Fab, CircularProgress, Box, LinearProgress } from '@mui/material';
 import Paper from './Material/Paper'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 function Material() {
 
@@ -125,7 +125,7 @@ function Material() {
   return (
     <>
       <Hero isHome={false}/>
-      <div className='main-header'>
+      {currentMaterial ?  <div className='main-header'>
       <span className="back-btn">
         <Link to="/">
         <Fab color="primary" aria-label="back">
@@ -133,8 +133,11 @@ function Material() {
         </Fab>
         </Link>
       </span>
-      {currentMaterial && result}
-      </div>
+      {result}
+      </div> : <div className='loading'>
+      <CircularProgress size="8rem" color='secondary' />
+    </div>}
+      
       
       {
       isPdfOpen &&  

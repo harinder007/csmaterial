@@ -8,6 +8,8 @@ import AdminDashboard from "./Components/Admin/AdminDashboard";
 import { BrowserRouter, Routes, Route,Navigate } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material";
 import Material from "./Components/Home/Material";
+import { useEffect, useState } from "react";
+
 
 const THEME = createTheme({
   palette: {
@@ -33,7 +35,19 @@ const THEME = createTheme({
   }
 });
 
+
 function App() {
+  const [visits, setVisits] = useState(null)
+
+  useEffect(async() =>{
+      await fetch("https://api.countapi.xyz/hit/csmaterial.vercel.app/8c6c9840-dc13-40e2-bdde-ac03d2d73e1c").then((res)=>{
+        return res.json()
+      }).then((data)=>{
+        console.log("************")
+        setVisits(data.value)
+      })
+  },[])
+console.log(visits)  
 
   return (
       <ThemeProvider theme={THEME}>
@@ -46,6 +60,7 @@ function App() {
         <Route path="/adminDashboard" element={<AdminDashboard/>}/>
         <Route path="/:material" element={<Material/>}/>
       </Routes>
+      {visits && <Footer visits={visits}/>}
       </BrowserRouter>
       </ThemeProvider>
   );

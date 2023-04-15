@@ -134,7 +134,7 @@ header {
     flex-direction: column;
     align-items: flex-start;
     width: 80vw;
-    height: 30%;
+    height: 20%;
     margin: 0 auto;
     gap: 1rem;
     margin-top: 3rem;
@@ -230,6 +230,14 @@ header {
     margin: 2rem 0.5rem;
 }
 
+.loading {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .results {
     display: flex;
     gap: 1rem;
@@ -273,6 +281,7 @@ header {
     align-items: baseline;
     gap:1rem;
     padding: 1rem;
+    min-height: 40%;
 }
 
 .back-btn {
@@ -396,7 +405,7 @@ header {
         font-size: 1.2rem;
     }
     .selector {
-        height: 50%;
+        height: 40%;
     }
     .home-btns {
         display: flex;
