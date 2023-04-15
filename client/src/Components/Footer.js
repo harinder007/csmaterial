@@ -1,8 +1,9 @@
 import React from 'react'
 
-function Footer() {
+function Footer({visits}) {
+  console.log(visits)
   return (
-    <div>Footer</div>
+    <div>Website Total Visits: {visits}</div>
   )
 }
 
