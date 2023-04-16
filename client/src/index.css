@@ -247,7 +247,7 @@ header {
 .pdf-viewer {
     position: absolute;
     width: 70vw;
-    height: 80vh;
+    height: 90vh;
     left: 0;
     right: 0;
     top: 0;
@@ -366,6 +366,11 @@ header {
     font-weight: 800;
     background-color: rgb(130, 130, 255);
     margin-top: 10px;
+}
+
+.visits {
+    font-size: 0.6rem;
+    padding-left: 1rem;
 }
 
 @media(max-width:1350px) {
@@ -517,6 +522,11 @@ header {
     
     .about-description {
         width: 95%;
+    }
+
+    .pdf-viewer {
+        width: 90vw;
+        height: 90vh;
     }
     .contact-heading {
         display: flex;
