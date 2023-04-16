@@ -62,7 +62,6 @@ function Paper({data, openPdf, closePdf, material}) {
       <CardActions>
       <Tooltip title="View">
       <IconButton onClick={()=> {
-        console.log(viewLink)
         openPdf(viewLink)
         }} sx ={{color:'#a8bbd9'}} aria-label="add to shopping cart">
         <i class="ph-bold ph-eye"></i>
