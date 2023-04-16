@@ -14,7 +14,6 @@ function Material() {
   const [pdfUrl, setPdfUrl] = useState(null);
   
   const openPdf = (url)=> {
-    console.log('hello')
     setPdfUrl(url);
     setIsPdfOpen(true);
   }
@@ -118,8 +117,7 @@ function Material() {
   (res)=> res.json()
 ).then((res)=>
   {setCurrentMaterial(res.filter((item) => item.className.toLowerCase() == data.className.toLowerCase() && item.sem == data.sem))
-  console.log(currentMaterial)
-  console.log(data)}
+  }
 )}
 
   return (

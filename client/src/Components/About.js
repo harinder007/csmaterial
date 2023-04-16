@@ -61,7 +61,7 @@ function About() {
         </p>
       </section>
       <section id="contact">
-        <h2 class="contact-heading">
+        <h2 className="contact-heading">
           <span>If you have any suggestions or feedback,</span>{" "}
           <span>please don't hesitate to reach out to us.</span>
         </h2>

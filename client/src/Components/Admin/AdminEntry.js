@@ -99,7 +99,6 @@ function AdminEntry({data}) {
   }).then((data)=> {
     if(data.err){
       errorSnackbar();
-      console.log(data.err.toString())
     }
     else{
       successSnackbar();

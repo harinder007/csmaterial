@@ -16,17 +16,11 @@ function Home({isAdmin, data1}) {
   const [stream, setStream] = useState("");
   const [sem, setSem] = useState("");
   const [material, setMaterial] = useState('');
-  console.log(isAdmin)
-  console.log(data1)
   let data = {
     stream: stream,
     sem: sem,
     material: material
   }
-
-  console.log(material)
-  console.log(page)
-  console.log(data)
   const incrementPage = () => {setPage(page + 1)};
   const decrementPage = () => {setPage(page - 1)};
   

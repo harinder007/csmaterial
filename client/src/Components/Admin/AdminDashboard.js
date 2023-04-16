@@ -10,7 +10,6 @@ function AdminDashboard() {
       return <Navigate to="/"/>;
   }
 
-  console.log(process.env.REACT_APP_URL)
   if(token){
      fetch(`${process.env.REACT_APP_URL}/api/auth`,{
       headers: {
@@ -18,7 +17,6 @@ function AdminDashboard() {
     }
     }).then(
     (res)=> res.json()).then((data)=>{
-      console.log(data)
       if(data.msg == 'success'){
         window.localStorage.setItem("isAdmin", true)
       }

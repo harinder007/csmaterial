@@ -43,11 +43,9 @@ function App() {
       await fetch("https://api.countapi.xyz/hit/csmaterial.vercel.app/8c6c9840-dc13-40e2-bdde-ac03d2d73e1c").then((res)=>{
         return res.json()
       }).then((data)=>{
-        console.log("************")
         setVisits(data.value)
       })
   },[])
-console.log(visits)  
 
   return (
       <ThemeProvider theme={THEME}>
