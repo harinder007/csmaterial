@@ -245,14 +245,13 @@ header {
 }
 
 .pdf-viewer {
-    position: absolute;
+    position: fixed;
+    top: 5%;
+    transform: translateY(-50%);
+    left: 50%;
+    transform: translateX(-50%);
     width: 70vw;
     height: 90vh;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto auto;
     z-index: 15;
 }
 
