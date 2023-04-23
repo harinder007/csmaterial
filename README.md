@@ -5,11 +5,10 @@ Visit on site [csmaterial.in](https://www.csmaterial.in/)
 
 ## Tecnology Used In this Website
 
-### For Frontend
+### For Frontend             ### For Backend                            
+ - Node                             - MongoDb
 - Html 
 - Css 
 - JavaScript 
 - ReactJs
-### For Backend 
-- Node js
-- MongoDb
+
