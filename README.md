@@ -17,4 +17,4 @@ Visit on site [csmaterial.in](https://www.csmaterial.in/)
  - NodeJs                           
  - MongoDb
 ### Home Page 
-# It contains three different classes like Mca.msc,Data Science
+It contains three different classes like Mca.Msc,Data Science
