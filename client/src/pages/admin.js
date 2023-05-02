@@ -1,8 +1,8 @@
 import React from 'react'
-import Header from './Home/Header'
+import Header from '../Components/Home/Header'
 import { useState } from 'react'
 import { Navigate } from 'react-router-dom';
-import AdminDashboard from './Admin/AdminDashboard';
+import AdminDashboard from '../Components/Admin/AdminDashboard';
 
 
 function Admin() {

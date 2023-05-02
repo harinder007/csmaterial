@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react'
-import Header from './Home/Header'
-import Options from './Home/Options'
-import AdminEntry from './Admin/AdminEntry'
+import Header from '../Components/Home/Header'
+import Options from '../Components/Home/Options'
+import AdminEntry from '../Components/Admin/AdminEntry'
 import { useState } from 'react'
 import { ButtonGroup, Button, Fab, Breadcrumbs, Typography, Link } from '@mui/material'
-import { Navigate } from 'react-router-dom'
+import { useRouter } from 'next/router'
 import addSuffix from '../Utility/addSuffix'
-import Hero from './Hero'
-import { useLocation } from 'react-router-dom'
+import Hero from '../Components/Hero'
 
 
 function Home({isAdmin, data1}) {
@@ -96,7 +95,7 @@ function Home({isAdmin, data1}) {
 
   const pageFour = (
     <>
-       <Navigate to={`/${material}-${stream}-${sem}`}/>
+       {/* <Navigate to={`/${material}-${stream}-${sem}`}/> */}
     </>
   )
 
