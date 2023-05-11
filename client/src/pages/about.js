@@ -1,11 +1,10 @@
-import React from "react";
-import Navbar from "../Components/Navbar";
-import { IconButton } from "@mui/material";
+import React from 'react';
+import NavigationTab from '../Components/NavigationTab';
+import { IconButton } from '@mui/material';
 
 function About() {
   return (
-    <>
-      <Navbar />
+    <NavigationTab>
       <section className="about">
         <h1 className="about-heading">
           This project is developed and managed by
@@ -36,7 +35,10 @@ function About() {
             <img src="./images/jpgs/harinder.jpg" alt="profile-photo" />
             <h2 className="name">Harinder Yadav</h2>
             <div className="socials">
-              <a href="https://www.youtube.com/@harindermcavlog6751" target="_blank">
+              <a
+                href="https://www.youtube.com/@harindermcavlog6751"
+                target="_blank"
+              >
                 <IconButton>
                   <img src="./images/pngs/YouTube.png" alt="youtube-icon" />
                 </IconButton>
@@ -62,12 +64,12 @@ function About() {
       </section>
       <section id="contact">
         <h2 className="contact-heading">
-          <span>If you have any suggestions or feedback,</span>{" "}
+          <span>If you have any suggestions or feedback,</span>{' '}
           <span>please don't hesitate to reach out to us.</span>
         </h2>
         <h1 className="mail">csmaterial007@gmail.com</h1>
       </section>
-    </>
+    </NavigationTab>
   );
 }
 

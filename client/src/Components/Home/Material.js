@@ -1,153 +1,69 @@
-import React, { useState, useEffect } from 'react'
-import Hero from '../Hero';
-import Header from './Header';
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import addSuffix from '../../Utility/addSuffix';
-import { Typography, Fab, CircularProgress, Box, LinearProgress } from '@mui/material';
-import Paper from './Material/Paper'
-import { Link } from 'react-router-dom'
+import {ArrowBack, Close} from '@mui/icons-material';
+import {
+  Typography,
+  Fab,
+  CircularProgress,
+  Box,
+  LinearProgress,
+} from '@mui/material';
+import Paper from './Material/Paper';
 
 function Material() {
-
-  const [url, setUrl] = useState(((window.location.href.split('/')).at(-1)).split('-'));
-  const [currentMaterial, setCurrentMaterial] = useState(null);
+  const router = useRouter();
+  const { query } = router;
   const [isPdfOpen, setIsPdfOpen] = useState(false);
   const [pdfUrl, setPdfUrl] = useState(null);
-  
-  const openPdf = (url)=> {
+
+  const backBtnHandler = () => {
+    router.push(`/?class=${query.class}&sem=${query.sem}`);
+  };
+
+  const openPdf = (url) => {
     setPdfUrl(url);
     setIsPdfOpen(true);
-  }
+  };
 
-  const closePdf = ()=> {
+  const closePdf = () => {
     setPdfUrl(null);
     setIsPdfOpen(false);
-  }
+  };
 
-  let data;
-
-  useEffect(() => {
-    getPapers();
-  }, [])
-
-  if(url.length === 3){
-    data = {
-      materialType:url[0],
-      className:url[1].replace("%20",' '),
-      sem:url[2]
-    }
-  }
-  else {
-    return (
-      <h1>Error 404: page not found</h1>
-    )
-  }
-
-  let result;
-  let route;
-
-  if(data.materialType.toLowerCase() == "previous%20year") {
-    route = `${process.env.REACT_APP_URL}/api/papers`;
-    result = currentMaterial && 
-    <section className="material">
-      <Header text={`${(data.className).toUpperCase()} ${addSuffix(data.sem)} Sem Papers`}/>
-      <Typography variant="overline" display="block" gutterBottom>
-        {`${currentMaterial.length} results found`}
-      </Typography>
-      <div className="results">
-      {currentMaterial.map(element => 
-      <Paper data={element} openPdf={openPdf} closePdf={closePdf} material={data.materialType.toLowerCase()}/>
-      )}
-      </div>
-    </section>
-  }
-
-  else if(data.materialType.toLowerCase() == "programs") {
-    route = `${process.env.REACT_APP_URL}/api/programs`;
-    result = currentMaterial && 
-    <section className="material">
-      <Header text={`${(data.className).toUpperCase()} ${addSuffix(data.sem)} Sem Programs`}/>
-      <Typography variant="overline" display="block" gutterBottom>
-        {`${currentMaterial.length} results found`}
-      </Typography>
-      <div className="results">
-      {currentMaterial.map(element => 
-      <Paper data={element} openPdf={openPdf} closePdf={closePdf} material={data.materialType.toLowerCase()}/>
-      )}
-      </div>
-    </section>
-  }
-  else if(data.materialType.toLowerCase() == "study%20material") {
-    route = `${process.env.REACT_APP_URL}/api/studyMaterial`;
-    result = currentMaterial && 
-    <section className="material">
-      <Header text={`${(data.className).toUpperCase()} ${addSuffix(data.sem)} Sem Study Material`}/>
-      <Typography variant="overline" display="block" gutterBottom>
-        {`${currentMaterial.length} results found`}
-      </Typography>
-      <div className="results">
-      {currentMaterial.map(element => 
-      <Paper data={element} openPdf={openPdf} closePdf={closePdf} material={data.materialType.toLowerCase()}/>
-      )}
-      </div>
-    </section>
-  }
-  else if(data.materialType.toLowerCase() == "syllabus") {
-    route = `${process.env.REACT_APP_URL}/api/syllabuses`;
-    result = currentMaterial && 
-    <section className="material">
-      <Header text={`${(data.className).toUpperCase()} ${addSuffix(data.sem)} Sem Syllabus`}/>
-      <Typography variant="overline" display="block" gutterBottom>
-        {`${currentMaterial.length} results found`}
-      </Typography>
-      <div className="results">
-      {currentMaterial.map(element => 
-      <Paper data={element} openPdf={openPdf} closePdf={closePdf} material={data.materialType.toLowerCase()}/>
-      )}
-      </div>
-    </section>
-  }
-  else {
-    return (
-      <h1>Error 404: page not found</h1>
-    )
-  }
-
-  function getPapers() {
-  fetch(route).then(
-  (res)=> res.json()
-).then((res)=>
-  {setCurrentMaterial(res.filter((item) => item.className.toLowerCase() == data.className.toLowerCase() && item.sem == data.sem))
-  }
-)}
+  const data = {
+    downloadLink:
+      'https://drive.google.com/uc?export=download&id=1Z-Rp6ovYZHx__lcvaqd6-aNU9851zI8r',
+    viewLink:
+      'https://drive.google.com/file/d/1Z-Rp6ovYZHx__lcvaqd6-aNU9851zI8r/preview',
+    year: 2021,
+    subject: 'IOT',
+    topic: 'Sensors',
+  };
 
   return (
-    <>
-      <Hero isHome={false}/>
-      {currentMaterial ?  <div className='main-header'>
+    <section className="selector">
       <span className="back-btn">
-        <Link to="/">
-        <Fab color="primary" aria-label="back">
-              <i className="ph-bold ph-arrow-left"></i>
+        <Fab onClick={backBtnHandler} color="primary" aria-label="back">
+          <ArrowBack />
         </Fab>
-        </Link>
       </span>
-      {result}
-      </div> : <div className='loading'>
-      <CircularProgress size="8rem" color='secondary' />
-    </div>}
-      
-      
-      {
-      isPdfOpen &&  
-      <div className="pdf-viewer">
-        <iframe src={pdfUrl} allow="autoplay"></iframe>
-        <span className="pdf-close" onClick={() => closePdf()}>
-            <i class="ph-bold ph-x"></i>
-          </span>
+      <div className="selection-header">
+        <h1>{`${query.class} ${addSuffix(query.sem)} Sem ${query.mat}`}</h1>
       </div>
-      } 
-    </>
-  )
+      <div className="results">
+        <Paper data={data} openPdf={openPdf} closePdf={closePdf} />
+      </div>
+      {isPdfOpen && (
+        <div className="pdf-viewer">
+          <iframe src={pdfUrl} allow="autoplay"></iframe>
+          <span className="pdf-close" onClick={() => closePdf()}>
+           <Close fontSize='large'/>
+          </span>
+        </div>
+      )}
+    </section>
+  );
 }
 
-export default Material
+export default Material;
