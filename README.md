@@ -10,9 +10,6 @@ Visit on site [csmaterial.in](https://www.csmaterial.in/)
 - JavaScript 
 - ReactJs
 
-
-
-
  ### For Backend     
  - NodeJs                           
  - MongoDb 
