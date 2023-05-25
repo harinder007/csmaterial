@@ -1,5 +1,30 @@
 import '../index.css';
 import Head from 'next/head';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+const THEME = createTheme({
+  palette: {
+    primary: {
+      light: '#66646d',
+      main: '#24222F',
+      dark: '#191821',
+      contrastText: '#D4CDF4',
+    },
+    secondary: {
+      light: '#c2cfe4',
+      main: '#a8bbd9',
+      dark: '#647082',
+      contrastText: '#fff',
+    },
+  },
+  typography: {
+    fontFamily: `'Montserrat', sans-serif;`,
+    fontSize: 16,
+    fontWeightLight: 300,
+    fontWeightRegular: 400,
+    fontWeightMedium: 500,
+  },
+});
 
 function App({ Component, pageProps }) {
   return (
@@ -18,14 +43,10 @@ function App({ Component, pageProps }) {
           content="csmaterial,computer science notes,mdu papers,mdu mca papers,mdu mca papers,mdu question paper,mca question paper,msc question paper,mdu syllabus,mca notes,msc notes,computer science project,computer science project ideas"
         />
         <title>CSMATERIAL - Resource hub for CS students</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
-          rel="stylesheet"
-        />
       </Head>
-      <Component {...pageProps} />
+      <ThemeProvider theme={THEME}>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   );
 }

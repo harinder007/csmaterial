@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { Visibility, Download, Share, ContentCopy } from '@mui/icons-material';
 import {
@@ -28,12 +28,18 @@ function Paper({ data, openPdf, closePdf }) {
 
   const [anchorEl, setAnchorEl] = useState(null);
   const [openSnack, setOpenSnack] = useState(false);
+  const [url, setUrl] = useState(null);
 
   console.log(router.pathname);
+  console.log(data);
+
+  useEffect(() => {
+    setUrl(window.location.toString());
+  }, []);
 
   const handleCopyClick = () => {
     setOpenSnack(true);
-    navigator.clipboard.writeText(window.location.toString());
+    navigator.clipboard.writeText(url);
     handleClose();
   };
   const handleShareClick = (event) => {
@@ -60,10 +66,10 @@ function Paper({ data, openPdf, closePdf }) {
           mb: 5,
         }}
       >
-        <CardContent sx={{ pb: 0 }}>
-          {query.mat === 'Previous Year' && data.year + ' papers'}
-          {query.mat === 'Syllabus' && data.subject}
-          {(query.mat === 'Study Material' || query.mat === 'Programs') &&
+        <CardContent sx={{ pb: 0, fontWeight: 600 }}>
+          {data.mat === 'Previous Year' && data.year + ' papers'}
+          {data.mat === 'Syllabus' && data.subject}
+          {(data.mat === 'Study Material' || data.mat === 'Programs') &&
             data.topic}
         </CardContent>
         <CardActions>
@@ -76,14 +82,14 @@ function Paper({ data, openPdf, closePdf }) {
                 sx={{ color: '#a8bbd9' }}
                 aria-label="view pdf"
               >
-                <Visibility fontSize="large" />
+                <Visibility fontSize="medium" />
               </IconButton>
             </a>
           </Tooltip>
           <Tooltip title="Download">
             <a href={data.downloadLink} download>
               <IconButton sx={{ color: '#a8bbd9' }} aria-label="download pdf">
-                <Download fontSize="large" />
+                <Download fontSize="medium" />
               </IconButton>
             </a>
           </Tooltip>
@@ -94,7 +100,7 @@ function Paper({ data, openPdf, closePdf }) {
                 sx={{ color: '#a8bbd9' }}
                 aria-label="share pdf"
               >
-                <Share fontSize="large" />
+                <Share fontSize="medium" />
               </IconButton>
             </a>
           </Tooltip>
@@ -127,13 +133,13 @@ function Paper({ data, openPdf, closePdf }) {
                 title={`${query.class} ${addSuffix(query.sem)} Sem ${
                   query.mat
                 }- `}
-                url={window.location.toString()}
+                url={url}
               >
                 <WhatsappIcon size={40} round={true} />
               </WhatsappShareButton>
               <TelegramShareButton
                 onClick={handleClose}
-                url={window.location.toString()}
+                url={url}
                 title={`${query.class} ${addSuffix(query.sem)} Sem ${
                   query.mat
                 }- `}
@@ -142,7 +148,7 @@ function Paper({ data, openPdf, closePdf }) {
               </TelegramShareButton>
               <FacebookMessengerShareButton
                 onClick={handleClose}
-                url={window.location.toString()}
+                url={url}
                 body={`${query.class} ${addSuffix(query.sem)} Sem ${
                   query.mat
                 }- `}

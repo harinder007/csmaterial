@@ -37,7 +37,15 @@ function Home() {
         router.push(`${router.asPath}&sem=${value}`);
         break;
       case 2:
-        router.push(`/material${router.asPath}&mat=${value}`);
+        console.log(value.toLowerCase())
+        router.push(
+          `/material/${query.class.toLowerCase() === 'msc ds' && 'mscds' || query.class.toLowerCase()}-${query.sem}-${
+            (value.toLowerCase() === 'previous year' && 'papers') ||
+            (value.toLowerCase() === 'syllabus' && 'syllabuses') ||
+            (value.toLowerCase() === 'programs' && 'programs') ||
+            (value.toLowerCase() === 'study material' && 'studyMaterial')
+          }`
+        );
         break;
     }
   };

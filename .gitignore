@@ -12,6 +12,8 @@ server/node_modules
 
 # production
 /build
+client/.env
+server/.env
 
 # misc
 .DS_Store
