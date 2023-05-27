@@ -18,5 +18,6 @@ It contains three different classes like MCA,Msc,Data Science
 ### Choose Semester
 It contains four semester of your class choose one semester
 ![choose semester](https://github.com/harinder007/csmaterial/assets/96901742/d6b30b08-f5b1-4985-a753-dcdc958dfca1)
-### Choose Semester
-It contains four semester of your class choose one semester
+### Choose Material
+It contains Previous Paper ,Study material, Syllabus, Lab file
+![chosse material](https://github.com/harinder007/csmaterial/assets/96901742/dd900fbb-5ef5-49e1-ae59-3a5f24d1767e)
