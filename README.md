@@ -11,7 +11,7 @@ Visit on site [csmaterial.in](https://www.csmaterial.in/)
  ### For Backend     
  - NodeJs                           
  - MongoDb 
-### Home Page 
+## Home Page 
 It contains three different classes like MCA,Msc,Data Science 
 ![Home Page](https://github.com/harinder007/csmaterial/assets/96901742/81812747-d84a-4963-9df2-3be036da5d71)
 
@@ -21,3 +21,7 @@ It contains four semester of your class choose one semester
 ### Choose Material
 It contains Previous Paper ,Study material, Syllabus, Lab file
 ![chosse material](https://github.com/harinder007/csmaterial/assets/96901742/dd900fbb-5ef5-49e1-ae59-3a5f24d1767e)
+### Syllabus
+It contains syllabus of Your Subject
+![choose Syallbus](https://github.com/harinder007/csmaterial/assets/96901742/6254bd86-fdd9-49b8-a9f7-c7d3cf9f84dc)
+## About Page 
