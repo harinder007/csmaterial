@@ -25,3 +25,4 @@ It contains Previous Paper ,Study material, Syllabus, Lab file
 It contains syllabus of Your Subject
 ![choose Syallbus](https://github.com/harinder007/csmaterial/assets/96901742/6254bd86-fdd9-49b8-a9f7-c7d3cf9f84dc)
 ## About Page 
+![about](https://github.com/harinder007/csmaterial/assets/96901742/2e0aa5d6-bceb-4312-b18d-49fea0314bef)
