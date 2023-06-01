@@ -65,7 +65,9 @@ function About() {
           <span>If you have any suggestions or feedback,</span>{" "}
           <span>please don't hesitate to reach out to us.</span>
         </h2>
-        <h1 className="mail">csmaterial007@gmail.com</h1>
+        <a href="mailto:csmaterial007@gmail.com">
+          <h1 className="mail">csmaterial007@gmail.com</h1>
+        </a>
       </section>
     </>
   );
