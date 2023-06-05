@@ -30,6 +30,7 @@ body {
   position: fixed;
   width: 98%;
   top: 0;
+  background-color: var(--bg-color);
 }
 
 .logo {
@@ -88,6 +89,7 @@ a {
 }
 
 header {
+  margin-top: 3rem;
   height: 70vh;
   background: url('../public/images/jpgs/bg3.jpg') center no-repeat;
   background-size: cover;
@@ -394,6 +396,11 @@ header {
   .about-heading {
     font-size: 2rem;
   }
+
+  .coming-soon img {
+    width: 25vw;
+  }
+
   .name {
     margin-top: 1rem;
   }
@@ -522,9 +529,22 @@ header {
     font-size: 0.8rem;
   }
 
-  .selection-heading {
-    display: inline;
-    font-size: 2rem;
+  .selection-header h1 {
+    margin-top: 2rem;
+  }
+
+  .coming-soon h2 {
+    font-size: 3.2rem;
+  }
+
+  .coming-soon img {
+    width: 30vw;
+  }
+
+  .back-btn {
+    left: -1rem;
+    top: -2rem;
+    transform: scale(0.8);
   }
 
   .profile > img {
@@ -562,6 +582,9 @@ header {
 }
 
 @media (max-width: 500px) {
+  .selection-header h1 {
+    font-size: 1.2rem;
+  }
   .hero-content {
     padding: 0;
   }
@@ -572,11 +595,6 @@ header {
 
   .hero-subheading {
     font-size: 0.6rem;
-  }
-
-  .selection-heading {
-    display: inline;
-    font-size: 1.2rem;
   }
 
   .profiles {
@@ -600,6 +618,14 @@ header {
   .about-heading {
     text-align: center;
     font-size: 1.3rem;
+  }
+
+  .coming-soon h2 {
+    font-size: 2.2rem;
+  }
+
+  .coming-soon img {
+    width: 30vw;
   }
 
   .name {
