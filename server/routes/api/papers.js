@@ -50,8 +50,6 @@ router.post('/',auth, async(req, res) => {
         await paper.save();
         res.send({msg: 'success'});
     } catch (error) {
-        res.send({"err":error.toString()})
-        console.log(error.toString())
     }
 });
 

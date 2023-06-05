@@ -1,20 +1,25 @@
-import React from 'react'
+import React from 'react';
 import { Button } from '@mui/material';
 
-function Options({values, setValue, incPage}) {
-
+function Options({ values, incPage }) {
   const buttons = [];
 
-  values.forEach(element => {
-    buttons.push(<Button size="large" variant="contained" sx={{m:1, fontWeight:700}} onClick={(e) => {setValue(e.target.innerText); incPage()}}>{element}</Button>)
+  values.forEach((element, i) => {
+    console.log(element);
+    buttons.push(
+      <Button
+        key={i}
+        size="large"
+        variant="contained"
+        sx={{ m: 1, fontWeight: 700 }}
+        onClick={()=> incPage(element)}
+      >
+        {element}
+      </Button>
+    );
   });
 
-
-  return (
-    <>
-        {buttons}
-    </>
-  )
+  return <>{buttons}</>;
 }
 
-export default Options
+export default Options;

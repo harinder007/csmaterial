@@ -2,6 +2,7 @@
 
 # dependencies
 client/node_modules
+client/.next
 server/node_modules
 /.pnp
 .pnp.js
@@ -11,6 +12,8 @@ server/node_modules
 
 # production
 /build
+client/.env
+server/.env
 
 # misc
 .DS_Store
