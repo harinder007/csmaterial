@@ -2,6 +2,10 @@ import '../index.css';
 import Head from 'next/head';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import VisitCount from '../Components/VisitCount';
+import { useRouter } from 'next/router';
+import NavigationTab from '../Components/NavigationTab';
+import { useEffect, useState } from 'react';
+import LoadingBar from 'react-top-loading-bar';
 
 const THEME = createTheme({
   palette: {
@@ -28,6 +32,30 @@ const THEME = createTheme({
 });
 
 function App({ Component, pageProps }) {
+  const router = useRouter();
+  console.log(router);
+
+  const [progress, setProgress] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    router.events.on('routeChangeStart', (url) => {
+      setIsLoading(true);
+      setProgress((prevProgress) => {
+        return prevProgress + 40;
+      });
+    });
+    router.events.on('routeChangeComplete', (url) => {
+      setIsLoading(false);
+      setProgress(100);
+    });
+
+    router.events.on('routeChangeError', (url) => {
+      setIsLoading(false);
+      setProgress(100);
+    });
+  }, [router]);
+
   return (
     <>
       <Head>
@@ -46,8 +74,19 @@ function App({ Component, pageProps }) {
         <title>CSMATERIAL - Resource hub for CS students</title>
       </Head>
       <ThemeProvider theme={THEME}>
-        <Component {...pageProps} />
-        <VisitCount/>
+        {isLoading && (
+          <LoadingBar
+            color="#d4cdf4"
+            progress={progress}
+            onLoaderFinished={() => setProgress(0)}
+            height={7}
+          />
+        )}
+
+        <NavigationTab>
+          <Component {...pageProps} />
+          <VisitCount />
+        </NavigationTab>
       </ThemeProvider>
     </>
   );
