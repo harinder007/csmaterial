@@ -1,6 +1,7 @@
 import '../index.css';
 import Head from 'next/head';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import VisitCount from '../Components/VisitCount';
 
 const THEME = createTheme({
   palette: {
@@ -46,6 +47,7 @@ function App({ Component, pageProps }) {
       </Head>
       <ThemeProvider theme={THEME}>
         <Component {...pageProps} />
+        <VisitCount/>
       </ThemeProvider>
     </>
   );
