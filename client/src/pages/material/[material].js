@@ -7,10 +7,8 @@ import Material from '../../Components/Home/Material';
 function material(props) {
   return (
     <>
-      <NavigationTab>
         <Hero isHome={false} />
         <Material data={props.data} metaData={props.metaData} />
-      </NavigationTab>
     </>
   );
 }

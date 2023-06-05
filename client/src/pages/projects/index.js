@@ -1,5 +1,5 @@
 import React from 'react';
-import NavigationTab from '../Components/NavigationTab';
+import NavigationTab from '../../Components/NavigationTab';
 import { useRouter } from 'next/router';
 
 function projects() {
@@ -8,12 +8,10 @@ function projects() {
 
   return (
     <>
-      <NavigationTab>
         <div className="coming-soon">
           <h2>Coming Soon...</h2>
           <img src="./images/svgs/clock.svg" alt="clock" />
         </div>
-      </NavigationTab>
     </>
   );
 }

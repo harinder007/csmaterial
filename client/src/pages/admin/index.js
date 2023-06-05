@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import AdminDashboard from '../Components/Admin/AdminDashboard';
+import AdminDashboard from '../../Components/Admin/AdminDashboard';
 
 function Admin() {
   const [userName, setUserName] = useState('');
