@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Home from '../Home';
-import { Navigate } from 'react-router-dom';
 
 function AdminDashboard() {
   const token = window.localStorage.getItem('token');

@@ -1,7 +1,5 @@
 import React from 'react';
-import Header from '../Components/Home/Header';
 import { useState } from 'react';
-import { Navigate } from 'react-router-dom';
 import AdminDashboard from '../Components/Admin/AdminDashboard';
 
 function Admin() {
@@ -36,7 +34,7 @@ function Admin() {
 
   return (
     <div className="main">
-      <Header text="Don't try to login" />
+      <h1 text="Don't try to login" />
       <form className="admin-login">
         <div className="user-input">
           <label htmlFor="username">Username</label>
