@@ -10,6 +10,7 @@ body {
   background-color: var(--bg-color);
   color: white;
   font-family: 'Montserrat', sans-serif;
+  user-select: none;
 }
 
 * {
@@ -58,27 +59,23 @@ body {
   position: relative;
 }
 
-.icon-link {
-  position: relative;
-}
-
-.icon-link::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 70px;
-  height: 60px;
-  background-image: url('../public/images/pngs/coming-soon.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  transform: translateX(-10%) translateY(85%);
-}
-
 .coming-soon {
-  position: absolute;
-  bottom: 30;
-  left: 20;
+  height: 90vh;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.coming-soon h2 {
+  font-weight: 800;
+  font-size: 5.2rem;
+  margin-bottom: 3rem;
+}
+
+.coming-soon img {
+  width: 15vw;
 }
 
 .nav-btn {
