@@ -7,6 +7,9 @@ import CloseIcon from '@mui/icons-material/Close';
 function Navbar() {
   const [dropdownNav, setDropdownNav] = useState(false);
 
+  const router = useRouter();
+  console.log(router.pathname);
+
   const navHandle = () => {
     if (dropdownNav) {
       setDropdownNav(false);
@@ -31,9 +34,9 @@ function Navbar() {
         </span>
       </button>
       <ul className="menu">
-        <Link href="/">HOME</Link>
-        <Link href="/projects">PROJECTS</Link>
-        <Link href="/about">ABOUT</Link>
+        <Link href="/" className={router.pathname === '/' && 'btn-active'}>HOME</Link>
+        <Link href="/projects" className={router.pathname === '/projects' && 'btn-active'}>PROJECTS</Link>
+        <Link href="/about" className={router.pathname === '/about' && 'btn-active'}>ABOUT</Link>
       </ul>
     </nav>
   );
