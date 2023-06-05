@@ -418,7 +418,7 @@ header {
     font-size: 15px;
   }
   header {
-    height: 50%;
+    height: 50vh;
   }
 
   .hero-heading {
@@ -456,6 +456,10 @@ header {
 }
 
 @media (max-width: 750px) {
+  .navbar {
+    width: 90vw;
+    z-index: 10;
+  }
   .menu {
     position: absolute;
     right: 0;
@@ -509,7 +513,7 @@ header {
   }
 
   header {
-    height: 50%;
+    height: 40vh;
   }
 
   .hero-heading {
@@ -561,10 +565,9 @@ header {
 }
 
 @media (max-width: 500px) {
-  header {
-    height: 50%;
+  .hero-content {
+    padding: 0;
   }
-
   .hero-heading {
     font-size: 1.5rem;
     margin-bottom: 1rem;
@@ -593,6 +596,7 @@ header {
 
   .about {
     margin: 0 auto;
+    margin-top: 4rem;
     padding: 1rem 2rem;
   }
 
@@ -607,7 +611,7 @@ header {
 
   .about-description {
     width: 100%;
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
   .contact-heading {
     display: flex;
