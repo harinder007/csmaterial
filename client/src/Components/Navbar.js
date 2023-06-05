@@ -1,83 +1,45 @@
-import { Link } from "react-router-dom";
-import Button from '@mui/material/Button';
-import { useState } from "react";
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
-const style = {
-  fontWeight:"800",
-  fontSize:"1.2rem"
-}
-
-
-function Navbar({tab}) {
-
+function Navbar() {
   const [dropdownNav, setDropdownNav] = useState(false);
 
-  const navHandle = ()=> {
-    if(dropdownNav){
+  const router = useRouter();
+  console.log(router.pathname);
+
+  const navHandle = () => {
+    if (dropdownNav) {
       setDropdownNav(false);
-    }
-    else {
+    } else {
       setDropdownNav(true);
     }
-  }
+  };
 
-  
+  return (
+    <nav className={dropdownNav ? 'navbar nav-open' : 'navbar'}>
+      <Link href="/">
+        <h2 className="logo">
+          csmaterial<span>.in</span>
+        </h2>
+      </Link>
+      <button className="nav-btn" onClick={navHandle}>
+        <span className="menu-btn">
+          <MenuIcon />
+        </span>
+        <span className="close-btn">
+          <CloseIcon />
+        </span>
+      </button>
+      <ul className="menu">
+        <Link href="/" className={router.pathname === '/' && 'btn-active'}>HOME</Link>
+        <Link href="/projects" className={router.pathname === '/projects' && 'btn-active'}>PROJECTS</Link>
+        <Link href="/about" className={router.pathname === '/about' && 'btn-active'}>ABOUT</Link>
+      </ul>
+    </nav>
+  );
+}
 
-  const homeMenu = (
-    <>
-      <Button><Link to="/" style={{...style, color:"#FFB524"}}>Home</Link></Button>
-      <Button variant="disabled" style={style}><Link to="/"><span className="icon-link">Projects</span></Link></Button>
-      <Button><Link to="/about" style={style}>About</Link></Button>
-    </>
-  )
-
-  const projectMenu = (
-    <>
-      <Button><Link to="/" style={style}>Home</Link></Button>
-      <Button style={{...style, color:"#FFB524"}}><Link to="/">Projects</Link></Button>
-      <Button><Link to="/about" style={style}>About</Link></Button>
-    </>
-  )
-
-  const aboutMenu = (
-    <>
-      <Button><Link to="/" style={style}>Home</Link></Button>
-      <Button variant="disabled" style={style}><Link to="/"><span className="icon-link">Projects</span></Link></Button>
-      <Button><Link to="/about" style={{...style, color:"#FFB524"}}>About</Link></Button>
-    </>
-  )
-
-  let menu = homeMenu;
-
-  if(tab === "home"){
-    menu = homeMenu;
-  }
-  else if(tab === "project"){
-    menu = projectMenu;
-  }
-  else{
-    menu = aboutMenu;
-  }
-
-    return (
-      <nav className={dropdownNav ? "navbar nav-open" : "navbar"}>
-        <a href="/">
-        <h2 className="logo">csmaterial<span>.in</span></h2>
-        </a>
-        <button className="nav-btn" onClick={navHandle}>
-          <span className="menu-btn">
-            <i class="ph-bold ph-list"></i>
-          </span>
-          <span className="close-btn">
-            <i class="ph-bold ph-x"></i>
-          </span>
-        </button>
-        <ul className="menu">
-            {menu}
-        </ul>
-      </nav>
-    );
-  }
-  
-  export default Navbar;
-  
+export default Navbar;
