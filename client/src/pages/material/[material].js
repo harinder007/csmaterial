@@ -29,11 +29,9 @@ export async function getStaticPaths() {
     });
   });
 
-  console.log(paths);
-
   return {
     fallback: false,
-    paths: paths
+    paths: paths,
   };
 }
 
@@ -50,8 +48,8 @@ export async function getStaticProps(context) {
       (material[2] === 'programs' && 'Programs') ||
       (material[2] === 'studyMaterial' && 'Study Material'),
   };
-  const apiRoute = process.env.REACT_APP_URL + `/api/${material[2]}`;
-  console.log(process.env.REACT_APP_URL + `/api/${material[2]}`);
+  const apiRoute = process.env.NEXT_PUBLIC_URL + `/api/${material[2]}`;
+  console.log(process.env.NEXT_PUBLIC_URL + `/api/${material[2]}`);
 
   try {
     const res = await fetch(apiRoute);
