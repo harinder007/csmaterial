@@ -130,8 +130,8 @@ function Paper({ data, openPdf, closePdf }) {
               </IconButton>
               <WhatsappShareButton
                 onClick={handleClose}
-                title={`${query.class} ${addSuffix(query.sem)} Sem ${
-                  query.mat
+                title={`${data.className} ${addSuffix(data.sem)} Sem ${
+                  data.mat
                 }- `}
                 url={url}
               >
@@ -140,8 +140,8 @@ function Paper({ data, openPdf, closePdf }) {
               <TelegramShareButton
                 onClick={handleClose}
                 url={url}
-                title={`${query.class} ${addSuffix(query.sem)} Sem ${
-                  query.mat
+                title={`${data.className} ${addSuffix(data.sem)} Sem ${
+                  data.mat
                 }- `}
               >
                 <TelegramIcon size={40} round={true} />
@@ -149,8 +149,8 @@ function Paper({ data, openPdf, closePdf }) {
               <FacebookMessengerShareButton
                 onClick={handleClose}
                 url={url}
-                body={`${query.class} ${addSuffix(query.sem)} Sem ${
-                  query.mat
+                body={`${data.className} ${addSuffix(data.sem)} Sem ${
+                  data.mat
                 }- `}
               >
                 <FacebookMessengerIcon size={40} round={true} />
